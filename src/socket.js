@@ -3,11 +3,7 @@ const { Server } = require('socket.io');
 const app = require('@src/router');
 
 const httpServer = http.createServer(app);
-const io = new Server(httpServer, {
-  cors: {
-    'Access-Control-Allow-Origin': '*'
-  }
-});
+const io = new Server(httpServer, { cors: { origin: '*' } });
 
 const user = {}; // List of active users
 io.on('connection', socket => {
