@@ -9,9 +9,8 @@ const httpServer = require('@src/socket');
 
 httpServer.listen(process.env.PORT || process.env.HTTP_PORT || 8000, () => {
   console.log(
-    'HTTP listening on port ->' + process.env.PORT ||
-      process.env.HTTP_PORT ||
-      8000
+    'HTTP listening on port ->',
+    process.env.PORT || process.env.HTTP_PORT || 8000
   );
 });
 
