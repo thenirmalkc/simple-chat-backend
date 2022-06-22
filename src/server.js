@@ -8,7 +8,11 @@ require('dotenv').config();
 const httpServer = require('@src/socket');
 
 httpServer.listen(process.env.PORT || process.env.HTTP_PORT || 8000, () => {
-  console.log('HTTP listening on port ->' + process.env.HTTP_PORT);
+  console.log(
+    'HTTP listening on port ->' + process.env.PORT ||
+      process.env.HTTP_PORT ||
+      8000
+  );
 });
 
 // // Https server
